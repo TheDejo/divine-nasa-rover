@@ -1,0 +1,7 @@
+@use '../../styles/core.scss' as core;
+
+.homeSection {
+    display: flex;
+    flex-direction: column;
+    gap: core.$space2;
+}

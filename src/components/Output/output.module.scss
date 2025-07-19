@@ -1,0 +1,53 @@
+@use '../../styles/color.scss' as color;
+@use '../../styles/core.scss' as core;
+@use '../../styles/typography.scss' as typography;
+@use '../../styles/breakpoint.scss' as breakpoint;
+
+.outputContainer {
+  display: flex;
+  align-items: center;
+  background-color: color.$text-black;
+  width: core.$full;
+  padding: core.$space2;
+  height: core.$space9;
+  border-left: core.$space1 solid color.$primary-color;
+  margin-top: core.$space2;
+  border-radius: core.$space1;
+  
+  .outputContent {
+    display: flex;
+    flex-direction: column;
+    gap: core.$space;
+    width: core.$full;
+    
+    .outputLabel {
+      @include typography.regular7;
+      color: color.$primary-color;
+      font-weight: typography.$font-semibold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .outputText {
+      @include typography.regular4;
+      color: color.$text-white;
+      word-break: break-word;
+      line-height: 1.4;
+    }
+  }
+  
+  .placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: core.$full;
+    height: core.$full;
+    
+    span {
+      @include typography.regular5;
+      color: color.$text-white;
+      opacity: 0.6;
+      font-style: italic;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+@use '../../styles/color.scss' as color;
+@use '../../styles/core.scss' as core;
+@use '../../styles/typography.scss' as typography;
+@use '../../styles/breakpoint.scss' as breakpoint;
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: core.$space1;
+  max-width: core.$space1 * 50;
+  width: core.$full;
+  
+  .inputLabel {
+    @include typography.regular5;
+
+    color: color.$text-white;
+    margin-bottom: core.$space;
+    
+    &::after {
+      background-color: color.$primary-color;
+      border-radius: core.$full * 0.5;
+      content: '';
+      display: inline-block;
+      height: core.$space1;
+      margin-left: core.$space1;
+      width: core.$space1;
+    }
+  }
+  
+  .inputWrapper {
+    position: relative;
+    
+    .inputField {
+      @include typography.regular4;
+
+      background-color: color.$text-white;
+      border-radius: core.$space1;
+      border: core.$space solid color.$text-black;
+      color: color.$text-black;
+      padding: core.$space3 core.$space2;
+      transition: all 0.15s ease-in-out;
+      width: core.$full;
+      
+      &::placeholder {
+        color: color.$text-black;
+        opacity: 0.7;
+      }
+      
+      &:focus {
+        border-color: color.$primary-color;
+        box-shadow: color.$focus-shadow;
+        outline: 0;
+      }
+      
+      &:hover:not(:disabled) {
+        border-color: color.$primary-color;
+      }
+    }
+  }
+}
+
+@include breakpoint.md {
+  .inputContainer {
+    max-width: core.$full;
+    
+    .inputWrapper .inputField {
+      font-size: core.$space2;
+    }
+  }
+} 
