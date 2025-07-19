@@ -1,5 +1,6 @@
 {
     "inputLabel": "Enter your text",
-    "inputPlaceholder": "Type characters separated by spaces",
-    "description": "Seperate characters with spaces - (NB:it submits automatically after 2 seconds)"
+    "autoSubmitLabel": " - (NB:it submits automatically after 2 seconds)",
+    "waitingForInput": "Waiting for input",
+    "inputPlaceholder": "Type characters separated by spaces"
 }
