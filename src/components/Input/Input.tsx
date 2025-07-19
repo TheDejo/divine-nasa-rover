@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import styles from './input.module.scss';
+import localTexts from './input.texts.json';
 
 interface InputProps {
   placeholder?: string;
@@ -14,7 +15,7 @@ const COMMA_SEPARATOR_LENGTH = COMMA_SEPARATOR.length;
 const DEFAULT_CURSOR_POSITION = 0;
 
 export default function Input({ 
-  placeholder = "Enter text...", 
+  placeholder = localTexts.placeholder, 
   value: initialValue = "", 
   onChange,
   disabled = false,
@@ -70,7 +71,7 @@ export default function Input({
       <div className={styles.inputWrapper}>
         <input
           ref={inputRef}
-          type="text"
+          type={localTexts.type}
           className={styles.inputField}
           placeholder={placeholder}
           value={inputValue}

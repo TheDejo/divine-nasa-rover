@@ -4,6 +4,7 @@ import Output from '@/components/Output/Output'
 import { debounce } from '@/utils/helpers';
 import React, { useState } from 'react'
 import styles from './homeSection.module.scss'
+import localTexts from './homeSection.texts.json'
 
 const TWO_SECONDS = 2000;
 
@@ -18,13 +19,14 @@ export default function HomeSection() {
     const handleInputChange = (value: string) => {
         debouncedSubmit(value);
     };
+    
   return (
     <div className={styles.homeSection}>
-          <p>Seperate characters with spaces - (NB:it submits automatically after 2 seconds)</p>
+          <p>{localTexts.description}</p>
           <div>
               <Input
-                  label="Enter your text"
-                  placeholder="Type characters separated by spaces"
+                  label={localTexts.inputLabel}
+                  placeholder={localTexts.inputPlaceholder}
                   onChange={handleInputChange}
               />
           </div>
